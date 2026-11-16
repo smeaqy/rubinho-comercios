@@ -7,10 +7,6 @@
   "engines": {
     "node": ">=22"
   },
-  "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev"
-  },
   "dependencies": {
     "@vercel/blob": "^2.0.0"
   }

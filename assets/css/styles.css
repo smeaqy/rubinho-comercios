@@ -329,6 +329,7 @@ ul {
   flex-direction: column;
   line-height: 1.05;
   font-size: 0.98rem;
+  white-space: nowrap;
 }
 
 .brand-text small {
@@ -352,6 +353,7 @@ ul {
   font-size: 0.92rem;
   color: var(--text-soft);
   transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
 }
 
 .site-nav a:hover,
@@ -1703,13 +1705,47 @@ ul {
 
 /* ------------------------------ Responsive -------------------------------- */
 
+/* Navegação compacta antes do layout quebrar */
+@media (max-width: 1080px) {
+  .nav-toggle {
+    display: grid;
+  }
+
+  .site-nav {
+    position: fixed;
+    inset: var(--header-h) 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+    padding: 0.8rem 1.25rem 1.2rem;
+    background: rgba(6, 7, 10, 0.98);
+    border-bottom: 1px solid var(--line);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .site-nav a {
+    padding: 0.75rem 0.6rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+}
+
 @media (max-width: 980px) {
   .hero-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-showcase {
-    order: -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1742,40 +1778,16 @@ ul {
     --header-h: 66px;
   }
 
-  .nav-toggle {
-    display: grid;
-  }
-
-  .site-nav {
-    position: fixed;
-    inset: var(--header-h) 0 auto 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.15rem;
-    padding: 0.8rem 1.25rem 1.2rem;
-    background: rgba(6, 7, 10, 0.98);
-    border-bottom: 1px solid var(--line);
-    transform: translateY(-8px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-
-  .site-nav.is-open {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
-
-  .site-nav a {
-    padding: 0.75rem 0.6rem;
-    font-size: 1rem;
-    border-bottom: 1px solid var(--line);
-    border-radius: 0;
-  }
-
   .header-actions .btn--ghost {
     display: none;
+  }
+
+  .brand-text {
+    font-size: 0.9rem;
+  }
+
+  .showcase-tile {
+    min-height: 128px;
   }
 
   .hero-meta {

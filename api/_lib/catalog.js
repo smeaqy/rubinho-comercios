@@ -1,6 +1,13 @@
-import { put, head } from '@vercel/blob';
+import { put, get, list, del } from '@vercel/blob';
 
-const BLOB_PATH = 'data/catalog.json';
+/*
+ * O catálogo é gravado em snapshots imutáveis (`data/catalog-<timestamp>.json`).
+ * Isso evita o cache de 60s que a Vercel aplica ao sobrescrever o mesmo caminho
+ * de Blob: um arquivo novo é lido na hora, então o painel e o site enxergam a
+ * alteração imediatamente. A leitura pega sempre o snapshot mais recente.
+ */
+const PREFIX = 'data/catalog-';
+const KEEP_SNAPSHOTS = 20;
 
 export const CATEGORIES = {
   carros: 'Carros',
@@ -141,24 +148,35 @@ function hasBlobCredentials() {
   return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
 }
 
+function snapshotPath() {
+  return `${PREFIX}${String(Date.now()).padStart(14, '0')}.json`;
+}
+
+function normalize(data) {
+  if (!data || !Array.isArray(data.products)) return null;
+  return {
+    version: Number(data.version) || 1,
+    updatedAt: data.updatedAt || null,
+    products: data.products,
+  };
+}
+
 export async function readCatalog() {
   const fallback = JSON.parse(JSON.stringify(SEED_CATALOG));
   if (!hasBlobCredentials()) return fallback;
 
   try {
-    const info = await head(BLOB_PATH);
-    const response = await fetch(`${info.url}?v=${Date.now()}`, { cache: 'no-store' });
-    if (!response.ok) return fallback;
+    const { blobs } = await list({ prefix: PREFIX, limit: 200 });
+    if (!blobs.length) return fallback;
 
-    const data = await response.json();
-    if (!data || !Array.isArray(data.products)) return fallback;
+    const latest = blobs.reduce((current, item) => (item.pathname > current.pathname ? item : current));
+    const result = await get(latest.pathname, { access: 'public', useCache: true });
+    if (!result || !result.stream) return fallback;
 
-    return {
-      version: Number(data.version) || 1,
-      updatedAt: data.updatedAt || null,
-      products: data.products,
-    };
-  } catch {
+    const parsed = normalize(JSON.parse(await new Response(result.stream).text()));
+    return parsed || fallback;
+  } catch (error) {
+    console.error('[catalog] leitura falhou, usando seed:', error?.message || error);
     return fallback;
   }
 }
@@ -170,15 +188,31 @@ export async function writeCatalog(catalog) {
     products: catalog.products,
   };
 
-  await put(BLOB_PATH, JSON.stringify(payload, null, 2), {
+  await put(snapshotPath(), JSON.stringify(payload, null, 2), {
     access: 'public',
     contentType: 'application/json',
     addRandomSuffix: false,
-    allowOverwrite: true,
-    cacheControlMaxAge: 60,
+    cacheControlMaxAge: 60 * 60 * 24 * 365,
   });
 
+  await pruneSnapshots();
   return payload;
+}
+
+async function pruneSnapshots() {
+  try {
+    const { blobs } = await list({ prefix: PREFIX, limit: 200 });
+    if (blobs.length <= KEEP_SNAPSHOTS) return;
+
+    const oldest = blobs
+      .sort((a, b) => a.pathname.localeCompare(b.pathname))
+      .slice(0, blobs.length - KEEP_SNAPSHOTS)
+      .map((blob) => blob.url);
+
+    await del(oldest);
+  } catch (error) {
+    console.error('[catalog] limpeza de snapshots falhou:', error?.message || error);
+  }
 }
 
 export function slugify(value) {
