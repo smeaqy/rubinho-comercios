@@ -1942,6 +1942,21 @@ ul {
   }
 }
 
+/* Telas muito estreitas: WhatsApp só com ícone para o cabeçalho caber */
+@media (max-width: 430px) {
+  .header-actions {
+    gap: 0.4rem;
+  }
+
+  .header-actions .wa-label {
+    display: none;
+  }
+
+  .header-actions .btn--wa {
+    padding-inline: 0.7rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
