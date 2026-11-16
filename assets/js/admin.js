@@ -165,12 +165,14 @@ el.loginForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   el.loginError.classList.remove('is-visible');
 
+  const user = document.querySelector('#user').value;
   const password = document.querySelector('#password').value;
+  const remember = document.querySelector('#remember').checked;
   el.loginSubmit.disabled = true;
   el.loginSubmit.textContent = 'Entrando…';
 
   try {
-    await api('/api/login', { method: 'POST', body: JSON.stringify({ password }) });
+    await api('/api/login', { method: 'POST', body: JSON.stringify({ user, password, remember }) });
     el.loginForm.reset();
     showShell();
     await loadProducts();

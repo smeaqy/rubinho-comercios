@@ -31,14 +31,24 @@
         </a>
 
         <h1>Acesso restrito</h1>
-        <p>Entre com a senha do painel para cadastrar, editar e publicar produtos do catálogo.</p>
+        <p>Entre com usuário e senha do painel para cadastrar, editar e publicar produtos do catálogo.</p>
 
         <div class="form-error" id="login-error" role="alert"></div>
 
         <form id="login-form" autocomplete="on">
           <div class="field">
+            <label for="user">Usuário</label>
+            <input class="input" id="user" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required placeholder="rubinho">
+          </div>
+          <div class="field">
             <label for="password">Senha do painel</label>
             <input class="input" id="password" name="password" type="password" autocomplete="current-password" required minlength="4" placeholder="••••••••">
+          </div>
+          <div class="field">
+            <label class="check">
+              <input type="checkbox" id="remember" name="remember">
+              Manter conectado neste aparelho por 30 dias
+            </label>
           </div>
           <button class="btn btn--gold btn--block" type="submit" id="login-submit">Entrar no painel</button>
         </form>

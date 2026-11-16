@@ -1,4 +1,11 @@
-import { buildSessionCookie, checkPassword, methodNotAllowed, readJsonBody } from './_lib/auth.js';
+import {
+  SESSION_OPTIONS,
+  buildSessionCookie,
+  checkPassword,
+  checkUser,
+  methodNotAllowed,
+  readJsonBody,
+} from './_lib/auth.js';
 
 const MAX_ATTEMPTS = 8;
 const WINDOW_MS = 10 * 60 * 1000;
@@ -36,11 +43,15 @@ export default function handler(req, res) {
     return res.status(400).json({ error: 'Requisição inválida.' });
   }
 
-  if (!checkPassword(body.password)) {
-    return res.status(401).json({ error: 'Senha incorreta.' });
+  // Avalia as duas checagens sempre, para não revelar qual campo está errado.
+  const userOk = checkUser(body.user);
+  const passwordOk = checkPassword(body.password);
+  if (!userOk || !passwordOk) {
+    return res.status(401).json({ error: 'Usuário ou senha incorretos.' });
   }
 
   attempts.delete(ip);
-  res.setHeader('Set-Cookie', buildSessionCookie());
+  const seconds = body.remember === true ? SESSION_OPTIONS.remember : SESSION_OPTIONS.normal;
+  res.setHeader('Set-Cookie', buildSessionCookie(seconds));
   return res.status(200).json({ ok: true });
 }

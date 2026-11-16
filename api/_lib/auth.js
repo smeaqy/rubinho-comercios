@@ -2,9 +2,16 @@ import crypto from 'node:crypto';
 
 const COOKIE_NAME = 'rc_admin';
 const SESSION_SECONDS = 60 * 60 * 12; // 12 horas
+const REMEMBER_SECONDS = 60 * 60 * 24 * 30; // 30 dias
+
+export const SESSION_OPTIONS = { normal: SESSION_SECONDS, remember: REMEMBER_SECONDS };
 
 function sessionSecret() {
   return process.env.ADMIN_SECRET || `rubinho-comercios::${process.env.ADMIN_PASSWORD || 'dev-only'}`;
+}
+
+function defaultUser() {
+  return process.env.ADMIN_USER || 'rubinho';
 }
 
 function parseCookies(header = '') {
@@ -30,6 +37,15 @@ export function checkPassword(input) {
   return safeEqual(input, expected);
 }
 
+export function checkUser(input) {
+  if (typeof input !== 'string') return false;
+  return safeEqual(input.trim().toLowerCase(), defaultUser().trim().toLowerCase());
+}
+
+export function adminUser() {
+  return defaultUser();
+}
+
 export function isAdminRequest(req) {
   const token = parseCookies(req.headers.cookie)[COOKIE_NAME];
   if (!token) return false;
@@ -49,11 +65,11 @@ export function isAdminRequest(req) {
   return safeEqual(signature, expected);
 }
 
-export function buildSessionCookie() {
-  const expires = Date.now() + SESSION_SECONDS * 1000;
+export function buildSessionCookie(seconds = SESSION_SECONDS) {
+  const expires = Date.now() + seconds * 1000;
   const payload = `v1.${expires}`;
   const signature = crypto.createHmac('sha256', sessionSecret()).update(payload).digest('base64url');
-  return serializeCookie(`${payload}.${signature}`, SESSION_SECONDS);
+  return serializeCookie(`${payload}.${signature}`, seconds);
 }
 
 export function buildExpiredCookie() {

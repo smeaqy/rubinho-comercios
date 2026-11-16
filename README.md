@@ -14,7 +14,7 @@ Landing page + catálogo profissional com **painel administrativo** para a Rubin
 | --- | --- |
 | `/` | Landing page com categorias, destaques, como funciona, FAQ e contato |
 | `/catalogo` | Catálogo com filtro por categoria, busca, ordenação e modal de detalhes |
-| `/admin` | Login por senha + CRUD de produtos (publicar, destacar, excluir) |
+| `/admin` | Login por usuário e senha (opção de manter conectado por 30 dias) + CRUD de produtos (publicar, destacar, excluir) |
 | `/api/products` | `GET` público (somente publicados) · `POST/PUT/DELETE` autenticado |
 | `/api/login` | Cria a sessão (cookie `HttpOnly` assinado com HMAC) |
 | `/api/logout` | Encerra a sessão |
@@ -31,6 +31,7 @@ pré-visualizar o layout, mas as alterações não são salvas nesse modo.
 
 | Variável | Obrigatória | Descrição |
 | --- | --- | --- |
+| `ADMIN_USER` | não | Usuário do painel `/admin` (padrão: `rubinho`) |
 | `ADMIN_PASSWORD` | sim | Senha do painel `/admin` |
 | `ADMIN_SECRET` | recomendada | Chave para assinar o cookie de sessão (32+ caracteres) |
 | `BLOB_READ_WRITE_TOKEN` | sim (produção) | Gerada automaticamente ao conectar um Blob Store ao projeto |
