@@ -4,23 +4,24 @@
    ========================================================================== */
 
 :root {
-  --ink-950: #06070a;
-  --ink-900: #080a0e;
-  --ink-850: #0b0e13;
-  --ink-800: #10141a;
-  --ink-700: #151a22;
-  --ink-600: #1c222c;
+  --ink-950: #05060a;
+  --ink-900: #080910;
+  --ink-850: #0b0d14;
+  --ink-800: #10131b;
+  --ink-700: #161a24;
+  --ink-600: #1d2230;
 
-  --gold-300: #ffe1a0;
-  --gold-400: #f1c45a;
-  --gold-500: #dfa92f;
-  --gold-600: #b98a1c;
+  --gold-100: #fff6de;
+  --gold-300: #ffe3a6;
+  --gold-400: #f4c96b;
+  --gold-500: #ddab35;
+  --gold-600: #b7871a;
 
-  --text: #f6f7f9;
-  --text-soft: #d7dbe3;
-  --muted: #98a0b0;
+  --text: #f7f8fa;
+  --text-soft: #d9dde6;
+  --muted: #99a1b2;
   --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.16);
+  --line-strong: rgba(255, 255, 255, 0.17);
 
   --wa: #25d366;
   --danger: #ef4b5a;
@@ -68,9 +69,23 @@ body::before {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(900px 520px at 78% -8%, rgba(223, 169, 47, 0.16), transparent 62%),
-    radial-gradient(700px 500px at 8% 12%, rgba(58, 96, 160, 0.12), transparent 60%),
-    linear-gradient(180deg, #080a0e 0%, #06070a 55%, #050609 100%);
+    radial-gradient(900px 520px at 78% -8%, rgba(221, 171, 53, 0.2), transparent 62%),
+    radial-gradient(700px 520px at 4% 18%, rgba(64, 104, 176, 0.14), transparent 62%),
+    linear-gradient(180deg, #080910 0%, #05060a 55%, #04050a 100%);
+}
+
+/* Fio dourado no topo da página */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 70;
+  background: linear-gradient(90deg, transparent, var(--gold-500), var(--gold-300), transparent);
+  opacity: 0.75;
+  pointer-events: none;
 }
 
 img {
@@ -735,6 +750,16 @@ ul {
   margin-top: 0.15rem;
 }
 
+.product-installment {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  margin-top: 0.1rem;
+}
+
 .product-price small {
   font-family: var(--font-body);
   font-size: 0.74rem;
@@ -936,6 +961,78 @@ ul {
   color: var(--muted);
   font-size: 0.9rem;
   margin-top: 0.7rem;
+}
+
+/* ----------------------------- Testimonials ------------------------------ */
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 1rem;
+}
+
+.testimonial {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.012));
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-3px);
+  border-color: rgba(244, 201, 107, 0.4);
+}
+
+.testimonial .stars {
+  color: var(--gold-400);
+  font-size: 0.86rem;
+  letter-spacing: 0.18em;
+}
+
+.testimonial blockquote {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.testimonial footer {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.testimonial .avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex: none;
+  background: linear-gradient(150deg, var(--gold-300), var(--gold-500));
+  color: #17130a;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.testimonial footer strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.testimonial footer small {
+  color: var(--muted);
+  font-size: 0.76rem;
 }
 
 /* ------------------------------- Contact --------------------------------- */
@@ -1350,6 +1447,10 @@ ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.8rem;
+}
+
+.field-row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .check {

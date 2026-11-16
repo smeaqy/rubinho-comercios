@@ -54,6 +54,18 @@ export function priceLabel(product) {
   return money(product.price);
 }
 
+export function installmentLabel(product) {
+  const count = Number(product.installments);
+  if (!count || count < 2) return '';
+  if (product.priceType === 'consult') return '';
+  const custom = Number(product.installmentValue);
+  if (Number.isFinite(custom) && custom > 0) return `${count}x de ${money(custom)}`;
+  if (!product.price) return '';
+  const each = product.price / count;
+  if (!Number.isFinite(each) || each <= 0) return '';
+  return `${count}x de ${money(each)}`;
+}
+
 export function productImage(product) {
   return product.image || PLACEHOLDERS[product.category] || PLACEHOLDERS.carros;
 }
@@ -140,7 +152,10 @@ export function productCard(product) {
       <div class="product-body">
         <span class="product-cat">${escapeHtml(meta)}</span>
         <h3>${escapeHtml(product.title)}</h3>
-        <div class="product-price">${escapeHtml(priceLabel(product))}</div>
+        <div class="product-price">
+          ${escapeHtml(priceLabel(product))}
+          ${installmentLabel(product) ? `<small class="product-installment">ou ${escapeHtml(installmentLabel(product))}</small>` : ''}
+        </div>
         <div class="product-actions">
           <button class="btn btn--ghost btn--sm" type="button" data-open-product="${escapeHtml(product.id)}">Detalhes</button>
           <a class="btn btn--wa btn--sm" href="${whatsappLink(product)}" target="_blank" rel="noopener">WhatsApp</a>
@@ -167,7 +182,10 @@ function buildModal() {
       <div class="modal-body">
         <span class="product-cat" id="modal-category"></span>
         <h2 id="modal-title"></h2>
-        <div class="product-price" id="modal-price"></div>
+        <div class="product-price">
+          <span id="modal-price"></span>
+          <small class="product-installment" id="modal-installment" hidden></small>
+        </div>
         <p id="modal-description"></p>
         <div class="modal-specs" id="modal-specs"></div>
         <div class="modal-actions">
@@ -187,6 +205,7 @@ function initModal(products) {
   const category = modal.querySelector('#modal-category');
   const title = modal.querySelector('#modal-title');
   const price = modal.querySelector('#modal-price');
+  const installment = modal.querySelector('#modal-installment');
   const description = modal.querySelector('#modal-description');
   const specs = modal.querySelector('#modal-specs');
   const wa = modal.querySelector('#modal-wa');
@@ -220,6 +239,9 @@ function initModal(products) {
       .join(' · ');
     title.textContent = product.title;
     price.textContent = priceLabel(product);
+    const installmentText = installmentLabel(product);
+    installment.textContent = installmentText ? `ou ${installmentText}` : '';
+    installment.hidden = !installmentText;
     description.textContent = product.description || 'Fale com a gente no WhatsApp para mais informações.';
     wa.href = whatsappLink(product);
 
@@ -227,6 +249,7 @@ function initModal(products) {
     if (product.year) details.push(['Ano/Modelo', product.year]);
     if (product.condition && CONDITION_LABELS[product.condition]) details.push(['Estado', CONDITION_LABELS[product.condition]]);
     details.push(['Categoria', CATEGORIES[product.category]?.label || '—']);
+    if (installmentText) details.push(['Parcelamento', `até ${product.installments}x`]);
     details.push(['Atendimento', 'WhatsApp e loja']);
 
     specs.innerHTML = details

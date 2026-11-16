@@ -1,0 +1,11 @@
+COLOQUE AS FOTOS DOS PRODUTOS NESTA PASTA
+
+1. Salve as fotos aqui (JPG, PNG ou WEBP, até 3 MB cada).
+2. Rode, na pasta do projeto:  node scripts/upload-fotos.mjs
+3. As URLs públicas aparecem no terminal e em fotos/urls.json
+4. Cole a URL no painel (/admin) no campo "Imagem do produto".
+
+Dica: nomeie os arquivos com o nome do produto (ex.: civic-2021-frente.jpg)
+para facilitar achar a URL certa.
+
+Formato ideal: horizontal 4:3 (1200 x 900 px).

@@ -64,6 +64,8 @@ const fields = {
   priceType: document.querySelector('#f-price-type'),
   price: document.querySelector('#f-price'),
   year: document.querySelector('#f-year'),
+  installments: document.querySelector('#f-installments'),
+  installmentValue: document.querySelector('#f-installment-value'),
   description: document.querySelector('#f-description'),
   image: document.querySelector('#f-image'),
   featured: document.querySelector('#f-featured'),
@@ -316,6 +318,8 @@ function openDrawer(product = null) {
   fields.priceType.value = product?.priceType || 'fixed';
   fields.price.value = product && product.price !== null && product.price !== undefined ? String(product.price) : '';
   fields.year.value = product?.year || '';
+  fields.installments.value = product?.installments ? String(product.installments) : '';
+  fields.installmentValue.value = product?.installmentValue ? String(product.installmentValue).replace('.', ',') : '';
   fields.description.value = product?.description || '';
   fields.image.value = product?.image || '';
   fields.featured.checked = Boolean(product?.featured);
@@ -398,6 +402,8 @@ el.form.addEventListener('submit', async (event) => {
     priceType: fields.priceType.value,
     price: fields.priceType.value === 'consult' ? null : fields.price.value.trim(),
     year: fields.year.value.trim(),
+    installments: fields.installments.value.trim(),
+    installmentValue: fields.installmentValue.value.trim(),
     description: fields.description.value.trim(),
     image: fields.image.value.trim(),
     featured: fields.featured.checked,

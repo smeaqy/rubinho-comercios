@@ -167,18 +167,28 @@
             </div>
           </div>
 
-          <div class="field-row">
+          <div class="field-row field-row--3">
             <div class="field">
               <label for="f-year">Ano / medida</label>
               <input class="input" id="f-year" name="year" maxlength="9" placeholder="2021 ou Aro 20" autocomplete="off">
             </div>
             <div class="field">
-              <label for="f-featured">Destaque</label>
-              <label class="check" style="margin-top: 0.5rem">
-                <input type="checkbox" id="f-featured" name="featured">
-                Mostrar primeiro na home
-              </label>
+              <label for="f-installments">Parcelas (opcional)</label>
+              <input class="input" id="f-installments" name="installments" type="number" min="2" max="60" step="1" placeholder="12" autocomplete="off">
+              <small>Máximo de parcelas. Vazio = não parcelar.</small>
             </div>
+            <div class="field">
+              <label for="f-installment-value">Valor da parcela (R$)</label>
+              <input class="input" id="f-installment-value" name="installmentValue" inputmode="decimal" placeholder="441,58" autocomplete="off">
+              <small>Opcional. Vazio = divide o preço.</small>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="check">
+              <input type="checkbox" id="f-featured" name="featured">
+              Destacar na home (aparece primeiro)
+            </label>
           </div>
 
           <div class="field">

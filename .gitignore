@@ -7,5 +7,6 @@ node_modules/
 Thumbs.db
 *.log
 
-.vercel
-.env*
+# Fotos locais e mapa de uploads (os arquivos ficam no Vercel Blob)
+fotos/*
+!fotos/LEIA-ME.txt

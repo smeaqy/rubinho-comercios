@@ -75,13 +75,36 @@ O projeto já está publicado em `https://rubinho-comercios-gamma.vercel.app`.
 - Tamanho recomendado: 1200 × 900 px, até 3 MB (JPG ou WEBP).
 - Para carros, fotografe frente 3/4, traseira, interior e painel.
 
+### Upload de várias fotos de uma vez
+
+1. Salve as imagens em `fotos/` (JPG, PNG ou WEBP, até 3 MB cada).
+2. Rode:
+   ```bash
+   node scripts/upload-fotos.mjs
+   ```
+3. As URLs públicas saem no terminal e em `fotos/urls.json`.
+4. Cole a URL no campo **Imagem do produto** de cada item do painel.
+
+### Parcelamento
+
+O campo **Parcelas** é opcional: preencha com o número máximo (ex.: `12`) e o site
+mostra “ou 12x de R$ 441” no card e no detalhe do produto. Deixe vazio para não exibir.
+
+### Depoimentos
+
+Os depoimentos ficam em `index.html`, na seção `#depoimentos` (quatro blocos `<article class="testimonial">`).
+São exemplos de layout — troque os textos, nomes e iniciais pelos relatos reais dos clientes.
+
+
 ## Estrutura
 
 ```
 api/                 funções serverless (auth, produtos, upload)
 assets/css/          design system (tema graphite + dourado)
+assets/img/          favicon, placeholders e og-image (compartilhamento)
 assets/js/           site.js (público) e admin.js (painel)
-assets/img/          favicon e placeholders por categoria
+fotos/               pasta local para fotos antes do upload em lote
+scripts/             upload-fotos.mjs (upload em lote para o Blob)
 index.html           landing page
 catalogo.html        catálogo
 admin.html           painel do lojista

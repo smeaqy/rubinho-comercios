@@ -10,10 +10,31 @@ function text(value, max) {
 
 function toPrice(value) {
   if (value === null || value === undefined || value === '') return null;
-  const normalized = typeof value === 'string' ? value.replace(/\./g, '').replace(',', '.') : value;
-  const number = Number(normalized);
+  if (typeof value === 'number') {
+    if (!Number.isFinite(value) || value < 0) return null;
+    return Math.round(value * 100) / 100;
+  }
+
+  let raw = String(value).replace(/[^\d,.-]/g, '');
+  const lastComma = raw.lastIndexOf(',');
+  const lastDot = raw.lastIndexOf('.');
+
+  if (lastComma > -1) {
+    raw = raw.replace(/\./g, '').replace(',', '.');
+  } else if (lastDot > -1 && raw.length - lastDot - 1 > 2) {
+    raw = raw.replace(/\./g, '');
+  }
+
+  const number = Number(raw);
   if (!Number.isFinite(number) || number < 0) return null;
   return Math.round(number * 100) / 100;
+}
+
+function toInstallments(value) {
+  if (value === null || value === undefined || value === '') return 0;
+  const number = Math.round(Number(value));
+  if (!Number.isFinite(number) || number < 2) return 0;
+  return Math.min(number, 60);
 }
 
 function sanitize(input, base = {}) {
@@ -30,6 +51,8 @@ function sanitize(input, base = {}) {
   if (priceType !== 'consult' && price === null) errors.push('Informe um preço válido ou escolha "Sob consulta".');
 
   const condition = CONDITIONS.includes(input.condition) ? input.condition : base.condition || '';
+  const installments = toInstallments(input.installments ?? base.installments);
+  const installmentValue = toPrice(input.installmentValue ?? base.installmentValue);
   const image = text(input.image ?? base.image, 500);
   if (image && !/^https:\/\//i.test(image)) errors.push('A imagem precisa ser um link https:// válido.');
 
@@ -42,6 +65,8 @@ function sanitize(input, base = {}) {
       category,
       price,
       priceType,
+      installments,
+      installmentValue,
       condition,
       year: text(input.year ?? base.year, 9),
       description: text(input.description ?? base.description, 700),
