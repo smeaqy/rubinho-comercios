@@ -773,8 +773,9 @@ a.topbar-item:hover {
 
 /* ------------------------------ Trust bar -------------------------------- */
 
+/* Faixa de garantias: fica no fim da página, logo acima do rodapé */
 .trust {
-  border-block: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   background: var(--ink-900);
 }
 
