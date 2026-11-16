@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="iPhones">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151A22"/>
+      <stop offset="0.55" stop-color="#0B0E13"/>
+      <stop offset="1" stop-color="#06070A"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="0.6" cy="0.14" r="0.72">
+      <stop offset="0" stop-color="#7A63D6" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#7A63D6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE1A0"/>
+      <stop offset="0.6" stop-color="#F1C45A"/>
+      <stop offset="1" stop-color="#B98A1C"/>
+    </linearGradient>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <rect width="800" height="600" fill="url(#grid3)"/>
+  <rect width="800" height="600" fill="url(#glow3)"/>
+  <g transform="translate(400 258)" fill="none" stroke="url(#gold3)" stroke-width="12" stroke-linejoin="round" opacity="0.92">
+    <rect x="-62" y="-118" width="124" height="236" rx="26"/>
+    <path d="M-18 -96h36" stroke-linecap="round" stroke-width="10"/>
+    <circle cx="0" cy="92" r="9" stroke-width="8"/>
+  </g>
+  <text x="400" y="452" text-anchor="middle" font-family="Sora, Inter, sans-serif" font-size="42" font-weight="700" fill="#F6F7F9" letter-spacing="-0.5">iPhones</text>
+  <text x="400" y="492" text-anchor="middle" font-family="Inter, sans-serif" font-size="19" letter-spacing="4" fill="#98A0B0">RUBINHO COMÉRCIOS</text>
+</svg>

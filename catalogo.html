@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo — Rubinho Comércios</title>
+    <meta
+      name="description"
+      content="Catálogo da Rubinho Comércios: carros, rodas, iPhones e ouro com preço e disponibilidade atualizados. Fale direto no WhatsApp."
+    >
+    <meta name="theme-color" content="#06070a">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="module" src="/assets/js/site.js"></script>
+  </head>
+
+  <body data-page="catalog">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Rubinho Comércios — página inicial">
+          <span class="brand-mark">RC</span>
+          <span class="brand-text">
+            Rubinho Comércios
+            <small>compra &amp; venda</small>
+          </span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+          <a href="/">Início</a>
+          <a href="/catalogo" aria-current="page">Catálogo</a>
+          <a href="/#categorias">Categorias</a>
+          <a href="/#como-funciona">Como funciona</a>
+          <a href="/#contato">Contato</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn--ghost btn--sm" href="/admin">Painel</a>
+          <a class="btn btn--wa btn--sm" data-whatsapp-link href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm5.72 13.9c-.24.68-1.4 1.3-1.94 1.36-.54.06-1.04.24-3.5-.72-2.96-1.16-4.82-4.2-4.96-4.4-.14-.2-1.16-1.56-1.16-2.98 0-1.42.74-2.12 1-2.42.26-.3.56-.38.74-.38h.54c.18 0 .42-.06.66.5.24.58.82 2 .9 2.14.08.14.12.3.02.5-.1.2-.16.32-.32.5-.16.18-.34.4-.48.54-.16.16-.32.34-.14.66.18.32.8 1.32 1.72 2.14 1.18 1.04 2.16 1.38 2.46 1.54.3.16.48.14.66-.06.18-.2.76-.88.96-1.18.2-.3.4-.24.68-.14.28.1 1.74.82 2.04.96.3.14.5.22.58.34.08.12.08.7-.16 1.38Z"/>
+            </svg>
+            WhatsApp
+          </a>
+          <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Catálogo atualizado</span>
+          <h1>Tudo que está <span class="gold">disponível hoje</span></h1>
+          <p>
+            Carros, rodas, iPhones e ouro conferidos um por um. Escolha uma categoria, filtre e chame no WhatsApp:
+            o item fica reservado para você durante a conversa.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--tight" style="padding-top: 0">
+        <div class="container">
+          <div class="filters">
+            <div class="chips" role="group" aria-label="Filtrar por categoria">
+              <button class="chip is-active" type="button" data-filter-category="todos" aria-pressed="true">Todos</button>
+              <button class="chip" type="button" data-filter-category="carros" aria-pressed="false">Carros</button>
+              <button class="chip" type="button" data-filter-category="rodas" aria-pressed="false">Rodas</button>
+              <button class="chip" type="button" data-filter-category="iphones" aria-pressed="false">iPhones</button>
+              <button class="chip" type="button" data-filter-category="ouro" aria-pressed="false">Ouro</button>
+            </div>
+
+            <span class="spacer"></span>
+
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5"/>
+                <path d="M16 16l4.5 4.5" stroke-linecap="round"/>
+              </svg>
+              <input class="input" type="search" placeholder="Buscar por modelo ou item" data-filter-search aria-label="Buscar produtos">
+            </div>
+
+            <select class="select" data-filter-sort aria-label="Ordenar produtos">
+              <option value="destaque">Relevância</option>
+              <option value="menor-preco">Menor preço</option>
+              <option value="maior-preco">Maior preço</option>
+            </select>
+          </div>
+
+          <div class="results-bar">
+            <span data-results-count>Carregando catálogo…</span>
+            <span>Atualizado pela loja • negociação pelo WhatsApp</span>
+          </div>
+
+          <div class="product-grid" data-catalog-grid></div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sell-band">
+            <div>
+              <span class="eyebrow">Não achou o que queria?</span>
+              <h2>Peça para a gente <span class="gold">buscar</span>.</h2>
+              <p>
+                Trabalhamos com entrada de veículos, rodas, iPhones e ouro toda semana.
+                Diga o que procura e avisamos assim que chegar.
+              </p>
+            </div>
+            <div class="sell-card">
+              <strong>Balcão de encomendas</strong>
+              <p>Descreva o item, o valor que quer pagar e o prazo. Respondemos no mesmo dia.</p>
+              <a class="btn btn--wa btn--block" data-whatsapp-link href="#" target="_blank" rel="noopener">Pedir no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/">
+              <span class="brand-mark">RC</span>
+              <span class="brand-text">
+                Rubinho Comércios
+                <small>compra &amp; venda</small>
+              </span>
+            </a>
+            <p>Carros, rodas, iPhones e ouro com procedência. Se quiser vender, nós compramos. Se quiser comprar, nós vendemos.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Catálogo</h4>
+            <a href="/catalogo?categoria=carros">Carros</a>
+            <a href="/catalogo?categoria=rodas">Rodas</a>
+            <a href="/catalogo?categoria=iphones">iPhones</a>
+            <a href="/catalogo?categoria=ouro">Ouro</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <a data-whatsapp-link href="#" target="_blank" rel="noopener">WhatsApp (83) 98661-6556</a>
+            <a href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">Instagram</a>
+            <a href="/admin">Painel do lojista</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© <span data-year>2026</span> Rubinho Comércios. Todos os direitos reservados.</span>
+          <span>Preços e disponibilidade sujeitos a alteração sem aviso.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

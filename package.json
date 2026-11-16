@@ -1,0 +1,17 @@
+{
+  "name": "rubinho-comercios",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing page e catálogo com painel administrativo da Rubinho Comércios — carros, rodas, iPhones e ouro.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.0.0"
+  }
+}

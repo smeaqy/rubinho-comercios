@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Ouro">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151A22"/>
+      <stop offset="0.55" stop-color="#0B0E13"/>
+      <stop offset="1" stop-color="#06070A"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="0.5" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#DFA92F" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#DFA92F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE1A0"/>
+      <stop offset="0.55" stop-color="#F1C45A"/>
+      <stop offset="1" stop-color="#B98A1C"/>
+    </linearGradient>
+    <pattern id="grid4" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg4)"/>
+  <rect width="800" height="600" fill="url(#grid4)"/>
+  <rect width="800" height="600" fill="url(#glow4)"/>
+  <g transform="translate(400 258)" fill="none" stroke="url(#gold4)" stroke-width="12" stroke-linecap="round" opacity="0.92">
+    <path d="M-96 -76h192l34 62-130 128-130-128z"/>
+    <path d="M-96 -76l64 62 34 66M96 -76l-64 62-34 66M-130 -14h260"/>
+  </g>
+  <text x="400" y="452" text-anchor="middle" font-family="Sora, Inter, sans-serif" font-size="42" font-weight="700" fill="#F6F7F9" letter-spacing="-0.5">Ouro</text>
+  <text x="400" y="492" text-anchor="middle" font-family="Inter, sans-serif" font-size="19" letter-spacing="4" fill="#98A0B0">RUBINHO COMÉRCIOS</text>
+</svg>
