@@ -102,7 +102,7 @@ São exemplos de layout — troque os textos, nomes e iniciais pelos relatos rea
 ```
 api/                 funções serverless (auth, produtos, upload)
 assets/css/          design system (tema graphite + dourado)
-assets/img/          favicon, placeholders e og-image (compartilhamento)
+assets/img/          logo, ícones, placeholders e og-rubinho (compartilhamento)
 assets/js/           site.js (público) e admin.js (painel)
 fotos/               pasta local para fotos antes do upload em lote
 scripts/             upload-fotos.mjs (upload em lote para o Blob)

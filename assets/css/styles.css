@@ -11,11 +11,12 @@
   --ink-700: #161a24;
   --ink-600: #1d2230;
 
-  --gold-100: #fff6de;
-  --gold-300: #ffe3a6;
-  --gold-400: #f4c96b;
-  --gold-500: #ddab35;
-  --gold-600: #b7871a;
+  /* Dourado extraído do logo (coroa e "R") */
+  --gold-100: #fff3d1;
+  --gold-300: #ffe08a;
+  --gold-400: #fbcf55;
+  --gold-500: #d9a12a;
+  --gold-600: #a8740f;
 
   --text: #f7f8fa;
   --text-soft: #d9dde6;
@@ -326,17 +327,43 @@ ul {
 }
 
 .brand-mark {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
+  flex: none;
   border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(150deg, rgba(241, 196, 90, 0.22), rgba(241, 196, 90, 0.04));
-  border: 1px solid rgba(241, 196, 90, 0.35);
-  color: var(--gold-300);
-  font-size: 1.05rem;
-  font-weight: 800;
-  box-shadow: inset 0 0 22px rgba(241, 196, 90, 0.16);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(251, 207, 85, 0.35);
+  box-shadow: 0 0 18px rgba(217, 161, 42, 0.18);
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Logo completo (rodapé e login do painel). O fundo preto do PNG se funde ao fundo escuro. */
+.brand-logo {
+  display: inline-block;
+  line-height: 0;
+}
+
+.brand-logo img {
+  width: 132px;
+  height: auto;
+  mix-blend-mode: lighten;
+}
+
+.brand-logo--center {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 0.4rem;
+}
+
+.brand-logo--center img {
+  width: 150px;
 }
 
 .brand-text {
