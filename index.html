@@ -31,21 +31,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="/assets/css/styles.css?v=20261116">
-    <script type="module" src="/assets/js/site.js?v=20261116"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20261116b">
+    <script type="module" src="/assets/js/site.js?v=20261116b"></script>
   </head>
 
   <body data-page="home">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-group">
+          <span class="topbar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
+            Segunda a sábado, 8h às 19h
+          </span>
+          <span class="topbar-item topbar-group--secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+            Envio para todo o Brasil
+          </span>
+        </div>
+        <div class="topbar-group">
+          <a class="topbar-item" data-whatsapp-link href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Z"/></svg>
+            (83) 98661-6556
+          </a>
+          <a class="topbar-item topbar-group--secondary" href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+            @rubinhocomercios
+          </a>
+        </div>
+      </div>
+    </div>
+
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/" aria-label="Rubinho Comércios compra e venda — página inicial">
-          <span class="brand-mark"><img src="/assets/img/brand-mark.png" alt="" width="40" height="40"></span>
+        <a class="brand" href="/" aria-label="Rubinho Comércios — página inicial">
+          <span class="brand-mark"><img src="/assets/img/brand-mark.png" alt="" width="44" height="44"></span>
           <span class="brand-text">
-            Rubinho Comércios
-            <small>compra &amp; venda</small>
+            Rubinho
+            <small>Comércios</small>
           </span>
         </a>
 
@@ -53,17 +78,15 @@
           <a href="/" aria-current="page">Início</a>
           <a href="/catalogo">Catálogo</a>
           <a href="#categorias">Categorias</a>
-          <a href="#como-funciona">Como funciona</a>
+          <a href="#como-funciona">Vender</a>
+          <a href="#faq">Dúvidas</a>
           <a href="#contato">Contato</a>
         </nav>
 
         <div class="header-actions">
-          <a class="btn btn--ghost btn--sm" href="/admin">Painel</a>
-          <a class="btn btn--wa btn--sm" data-whatsapp-link href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm5.72 13.9c-.24.68-1.4 1.3-1.94 1.36-.54.06-1.04.24-3.5-.72-2.96-1.16-4.82-4.2-4.96-4.4-.14-.2-1.16-1.56-1.16-2.98 0-1.42.74-2.12 1-2.42.26-.3.56-.38.74-.38h.54c.18 0 .42-.06.66.5.24.58.82 2 .9 2.14.08.14.12.3.02.5-.1.2-.16.32-.32.5-.16.18-.34.4-.48.54-.16.16-.32.34-.14.66.18.32.8 1.32 1.72 2.14 1.18 1.04 2.16 1.38 2.46 1.54.3.16.48.14.66-.06.18-.2.76-.88.96-1.18.2-.3.4-.24.68-.14.28.1 1.74.82 2.04.96.3.14.5.22.58.34.08.12.08.7-.16 1.38Z"/>
-            </svg>
-            <span class="wa-label">WhatsApp</span>
+          <a class="btn btn--outline-gold btn--sm" data-whatsapp-link href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm5.72 13.9c-.24.68-1.4 1.3-1.94 1.36-.54.06-1.04.24-3.5-.72-2.96-1.16-4.82-4.2-4.96-4.4-.14-.2-1.16-1.56-1.16-2.98 0-1.42.74-2.12 1-2.42.26-.3.56-.38.74-.38h.54c.18 0 .42-.06.66.5.24.58.82 2 .9 2.14.08.14.12.3.02.5-.1.2-.16.32-.32.5-.16.18-.34.4-.48.54-.16.16-.32.34-.14.66.18.32.8 1.32 1.72 2.14 1.18 1.04 2.16 1.38 2.46 1.54.3.16.48.14.66-.06.18-.2.76-.88.96-1.18.2-.3.4-.24.68-.14.28.1 1.74.82 2.04.96.3.14.5.22.58.34.08.12.08.7-.16 1.38Z"/></svg>
+            Falar no WhatsApp
           </a>
           <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
             <span></span>
@@ -77,166 +100,144 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Carros • rodas • iPhones • ouro</span>
-            <h1>
-              Seu próximo <span class="gold">carro, iPhone ou ouro</span> está aqui.
-            </h1>
+            <span class="eyebrow">Carros · Rodas · iPhones · Ouro</span>
+            <h1>Se quiser vender, <span class="gold">nois compra</span>, e se quiser comprar, <span class="gold">nois vende!</span></h1>
             <p class="hero-lead">
-              A Rubinho Comércios compra e vende com procedência. Traga o seu carro, suas rodas, seu iPhone ou
-              suas joias: avaliamos na hora, sem enrolação, e pagamos à vista — ou você sai daqui com o que
-              procura, parcelado no cartão.
+              Na Rubinho Comércios você compra, vende ou troca carros, rodas, iPhones e ouro com avaliação na hora,
+              pagamento à vista e parcelamento no cartão. Atendimento direto, sem intermediário.
             </p>
 
             <div class="hero-actions">
               <a class="btn btn--gold" href="/catalogo">
-                Ver o catálogo
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                Ver catálogo completo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
               <a class="btn btn--ghost" data-sell-link href="#" target="_blank" rel="noopener">Quero vender o meu</a>
             </div>
 
-            <div class="hero-meta">
-              <div>
-                <strong>+2.300</strong>
-                <span>seguidores no Instagram</span>
-              </div>
-              <div>
-                <strong data-total-count>00</strong>
-                <span>itens no catálogo</span>
-              </div>
-              <div>
-                <strong>Troca + volta</strong>
-                <span>avaliamos seu usado</span>
-              </div>
-            </div>
+            <ul class="hero-checks">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Avaliação gratuita</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Troca com volta</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Documentação conferida</li>
+            </ul>
           </div>
 
-          <div class="hero-showcase" aria-hidden="true">
-            <a class="showcase-tile" href="/catalogo?categoria=carros" tabindex="-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <path d="M3 13h18M4.5 13l1.7-5.1A2.5 2.5 0 0 1 8.6 6h6.8a2.5 2.5 0 0 1 2.4 1.9L19.5 13" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="7.5" cy="16" r="1.8"/><circle cx="16.5" cy="16" r="1.8"/>
-              </svg>
+          <div class="hero-visual">
+            <img src="/assets/img/logo-rubinho.png" alt="Logo Rubinho Comércios" width="560" height="560">
+            <div class="hero-badge hero-badge--a">
+              <span class="dot" aria-hidden="true"></span>
               <div>
-                <strong>Carros</strong>
-                <small>Seminovos com procedência</small>
+                <strong data-total-count>—</strong>
+                <span>itens disponíveis agora</span>
               </div>
-            </a>
-
-            <a class="showcase-tile" href="/catalogo?categoria=rodas" tabindex="-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/>
-                <path d="M12 4v5.4M19 16l-4.4-2.4M5 16l4.4-2.4" stroke-linecap="round"/>
-              </svg>
+            </div>
+            <div class="hero-badge hero-badge--b hero-founder">
+              <img src="/assets/img/rubinho-foto.png" alt="Rubinho, dono da Rubinho Comércios" width="96" height="96">
               <div>
-                <strong>Rodas</strong>
-                <small>Aros originais e esportivos</small>
+                <strong>Rubinho</strong>
+                <span>Atendimento direto comigo</span>
+                <span class="hero-founder-meta">+2.300 seguidores no Instagram</span>
               </div>
-            </a>
-
-            <a class="showcase-tile" href="/catalogo?categoria=iphones" tabindex="-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <rect x="7" y="2.5" width="10" height="19" rx="2.6"/>
-                <path d="M10.5 5h3" stroke-linecap="round"/>
-              </svg>
-              <div>
-                <strong>iPhones</strong>
-                <small>Testados e com garantia</small>
-              </div>
-            </a>
-
-            <a class="showcase-tile" href="/catalogo?categoria=ouro" tabindex="-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <path d="M6 4h12l3 5.5L12 21 3 9.5 6 4Z" stroke-linejoin="round"/>
-                <path d="M3 9.5h18M9 4l3 5.5L15 4M12 9.5V21" stroke-linejoin="round"/>
-              </svg>
-              <div>
-                <strong>Ouro</strong>
-                <small>Joias 18k com laudo</small>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Faixa -->
-      <div class="strip" aria-hidden="true">
-        <div class="strip-inner">
-          <span>Compramos seu carro</span><span>iPhones com garantia</span><span>Rodas e acessórios</span>
-          <span>Ouro e joias 18k</span><span>Troca com volta</span><span>Pagamento na hora</span>
-          <span>Compramos seu carro</span><span>iPhones com garantia</span><span>Rodas e acessórios</span>
-          <span>Ouro e joias 18k</span><span>Troca com volta</span><span>Pagamento na hora</span>
+      <!-- Garantias -->
+      <section class="trust" aria-label="Por que comprar com a gente">
+        <div class="container trust-grid">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3Z" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Procedência conferida</strong><span>Cada item é avaliado e documentado antes da venda.</span></div>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5" stroke-linecap="round"/></svg>
+            <div><strong>Pagamento à vista</strong><span>Compramos o seu e pagamos na hora, via Pix ou dinheiro.</span></div>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9.5h19M6.5 15h4" stroke-linecap="round"/></svg>
+            <div><strong>Parcelamento no cartão</strong><span>Condições facilitadas e financiamento para veículos.</span></div>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+            <div><strong>Envio para todo o Brasil</strong><span>Entrega na região e envio rastreado de iPhones e joias.</span></div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <!-- Categorias -->
       <section class="section" id="categorias">
         <div class="container">
           <div class="section-head">
             <div>
-              <span class="eyebrow">O que trabalhamos</span>
-              <h2>Quatro categorias, <span class="gold">um só lugar</span></h2>
+              <span class="eyebrow">Nossas categorias</span>
+              <h2>Quatro especialidades, <span class="gold">um só endereço</span></h2>
               <p>Entrada nova toda semana e procedência conferida item por item. Se não estiver no catálogo, a gente busca para você.</p>
             </div>
-            <a class="btn btn--ghost btn--sm" href="/catalogo">Ver todos os itens</a>
+            <a class="link-arrow" href="/catalogo">
+              Ver todos os itens
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
 
           <div class="category-grid">
             <a class="category-card" href="/catalogo?categoria=carros">
+              <span class="category-num">01</span>
               <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <path d="M3 13h18M4.5 13l1.7-5.1A2.5 2.5 0 0 1 8.6 6h6.8a2.5 2.5 0 0 1 2.4 1.9L19.5 13" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="7.5" cy="16" r="1.8"/><circle cx="16.5" cy="16" r="1.8"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13h18M4.5 13l1.7-5.1A2.5 2.5 0 0 1 8.6 6h6.8a2.5 2.5 0 0 1 2.4 1.9L19.5 13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="16" r="1.8"/><circle cx="16.5" cy="16" r="1.8"/></svg>
               </span>
               <h3>Carros</h3>
               <p>Hatch, sedan e picape seminovos revisados. Financiamento aprovado na hora.</p>
-              <span class="count" data-category-count="carros">Carregando…</span>
+              <span class="category-foot">
+                <span class="count" data-category-count="carros">Carregando…</span>
+                <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
             </a>
 
             <a class="category-card" href="/catalogo?categoria=rodas">
+              <span class="category-num">02</span>
               <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/>
-                  <path d="M12 4v5.4M19 16l-4.4-2.4M5 16l4.4-2.4" stroke-linecap="round"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/><path d="M12 4v5.4M19 16l-4.4-2.4M5 16l4.4-2.4" stroke-linecap="round"/></svg>
               </span>
               <h3>Rodas</h3>
               <p>Jogos de aro 15 ao 22, originais e esportivos, com opção de troca.</p>
-              <span class="count" data-category-count="rodas">Carregando…</span>
+              <span class="category-foot">
+                <span class="count" data-category-count="rodas">Carregando…</span>
+                <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
             </a>
 
             <a class="category-card" href="/catalogo?categoria=iphones">
+              <span class="category-num">03</span>
               <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <rect x="7" y="2.5" width="10" height="19" rx="2.6"/>
-                  <path d="M10.5 5h3" stroke-linecap="round"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2.5" width="10" height="19" rx="2.6"/><path d="M10.5 5h3" stroke-linecap="round"/></svg>
               </span>
               <h3>iPhones</h3>
               <p>Aparelhos testados, bateria conferida e garantia. Aceitamos seu usado na troca.</p>
-              <span class="count" data-category-count="iphones">Carregando…</span>
+              <span class="category-foot">
+                <span class="count" data-category-count="iphones">Carregando…</span>
+                <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
             </a>
 
             <a class="category-card" href="/catalogo?categoria=ouro">
+              <span class="category-num">04</span>
               <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <path d="M6 4h12l3 5.5L12 21 3 9.5 6 4Z" stroke-linejoin="round"/>
-                  <path d="M3 9.5h18M9 4l3 5.5L15 4M12 9.5V21" stroke-linejoin="round"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4h12l3 5.5L12 21 3 9.5 6 4Z" stroke-linejoin="round"/><path d="M3 9.5h18M9 4l3 5.5L15 4M12 9.5V21" stroke-linejoin="round"/></svg>
               </span>
               <h3>Ouro</h3>
               <p>Correntes, alianças e peças 18k com laudo. Compramos ouro e joias usadas.</p>
-              <span class="count" data-category-count="ouro">Carregando…</span>
+              <span class="category-foot">
+                <span class="count" data-category-count="ouro">Carregando…</span>
+                <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
             </a>
           </div>
         </div>
       </section>
 
       <!-- Destaques -->
-      <section class="section" id="destaques">
+      <section class="section section--alt" id="destaques">
         <div class="container">
           <div class="section-head">
             <div>
@@ -251,145 +252,115 @@
         </div>
       </section>
 
-      <!-- Como funciona -->
-      <section class="section section--tight" id="como-funciona">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="eyebrow">Simples assim</span>
-              <h2>Como fechar negócio com a gente</h2>
-            </div>
+      <!-- Como funciona / vender -->
+      <section class="section" id="como-funciona">
+        <div class="container process">
+          <div class="process-intro">
+            <span class="eyebrow">Quer vender ou trocar?</span>
+            <h2>A gente <span class="gold">compra o seu</span> também.</h2>
+            <p>
+              Carro, moto, rodas, iPhone ou ouro: mande as fotos e a descrição no WhatsApp.
+              Avaliação rápida, proposta na hora e pagamento no mesmo dia, sem taxa escondida.
+            </p>
+            <ul class="sell-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Avaliação gratuita e sem compromisso</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Pagamento à vista, Pix ou dinheiro</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Cuidamos da transferência e da documentação</li>
+            </ul>
+            <a class="btn btn--wa" data-sell-link href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Z"/></svg>
+              Pedir avaliação no WhatsApp
+            </a>
           </div>
 
           <div class="steps">
             <article class="step">
-              <h3>Escolha ou mande a foto</h3>
-              <p>Veja o item no catálogo e chame no WhatsApp — ou mande foto do que você quer vender, com ano e valor esperado.</p>
+              <div>
+                <h3>Escolha ou mande a foto</h3>
+                <p>Veja o item no catálogo e chame no WhatsApp, ou mande foto do que quer vender, com ano e valor esperado.</p>
+              </div>
             </article>
             <article class="step">
-              <h3>Avaliamos na hora</h3>
-              <p>Conferimos procedência, estado e documentação, e já fechamos o valor de compra ou a troca com volta.</p>
+              <div>
+                <h3>Avaliamos na hora</h3>
+                <p>Conferimos procedência, estado e documentação, e já fechamos o valor de compra ou a troca com volta.</p>
+              </div>
             </article>
             <article class="step">
-              <h3>Fecha e leva</h3>
-              <p>Pix, dinheiro ou cartão parcelado. Documentação conferida e entrega combinada, muitas vezes no mesmo dia.</p>
+              <div>
+                <h3>Fecha e leva</h3>
+                <p>Pix, dinheiro ou cartão parcelado. Documentação conferida e entrega combinada, muitas vezes no mesmo dia.</p>
+              </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Vender -->
-      <section class="section section--tight">
-        <div class="container">
-          <div class="sell-band">
-            <div>
-              <span class="eyebrow">Quer vender?</span>
-              <h2>A gente <span class="gold">compra</span> o seu também.</h2>
-              <p>
-                Carro, moto, rodas, iPhone ou ouro: mande as fotos e a descrição no WhatsApp.
-                Avaliação rápida, proposta na hora e pagamento no mesmo dia — sem taxa escondida.
-              </p>
-              <ul class="sell-list">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Avaliação gratuita e sem compromisso
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Pagamento à vista, Pix ou dinheiro
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Cuidamos da transferência e documentação
-                </li>
-              </ul>
-            </div>
-
-            <div class="sell-card">
-              <strong>Manda no WhatsApp</strong>
-              <p>Fotos do item, ano/modelo e o valor que você espera. Respondemos no mesmo dia.</p>
-              <a class="btn btn--wa btn--block" data-sell-link href="#" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm5.72 13.9c-.24.68-1.4 1.3-1.94 1.36-.54.06-1.04.24-3.5-.72-2.96-1.16-4.82-4.2-4.96-4.4-.14-.2-1.16-1.56-1.16-2.98 0-1.42.74-2.12 1-2.42.26-.3.56-.38.74-.38h.54c.18 0 .42-.06.66.5.24.58.82 2 .9 2.14.08.14.12.3.02.5-.1.2-.16.32-.32.5-.16.18-.34.4-.48.54-.16.16-.32.34-.14.66.18.32.8 1.32 1.72 2.14 1.18 1.04 2.16 1.38 2.46 1.54.3.16.48.14.66-.06.18-.2.76-.88.96-1.18.2-.3.4-.24.68-.14.28.1 1.74.82 2.04.96.3.14.5.22.58.34.08.12.08.7-.16 1.38Z"/>
-                </svg>
-                Falar agora no WhatsApp
-              </a>
-            </div>
           </div>
         </div>
       </section>
 
       <!-- Depoimentos -->
-      <section class="section section--tight" id="depoimentos">
+      <section class="section section--alt" id="depoimentos">
         <div class="container">
           <div class="section-head">
             <div>
               <span class="eyebrow">Quem já fechou</span>
               <h2>Negócio fechado, <span class="gold">cliente satisfeito</span></h2>
-              <p>Histórias de quem comprou, vendeu ou trocou com a gente pelo WhatsApp.</p>
+              <p>Histórias de quem comprou, vendeu ou trocou com a gente.</p>
             </div>
-            <a class="btn btn--ghost btn--sm" href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">Ver no Instagram</a>
+            <a class="link-arrow" href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">
+              Ver no Instagram
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
 
           <div class="testimonial-grid">
-            <article class="testimonial">
+            <figure class="testimonial">
               <div class="stars" aria-label="Avaliação 5 de 5">★★★★★</div>
               <blockquote>“Comprei um iPhone 13 e chegou no dia seguinte, todo revisado e com garantia. Atendimento direto com o Rubinho, sem intermediário.”</blockquote>
               <footer>
                 <span class="avatar" aria-hidden="true">MA</span>
-                <div>
-                  <strong>Marcos A.</strong>
-                  <small>comprou um iPhone 13</small>
-                </div>
+                <div><strong>Marcos A.</strong><small>comprou um iPhone 13</small></div>
               </footer>
-            </article>
-
-            <article class="testimonial">
+            </figure>
+            <figure class="testimonial">
               <div class="stars" aria-label="Avaliação 5 de 5">★★★★★</div>
               <blockquote>“Fechei meu Civic na troca com volta. Avaliaram meu carro na hora e explicaram cada detalhe da documentação.”</blockquote>
               <footer>
                 <span class="avatar" aria-hidden="true">JR</span>
-                <div>
-                  <strong>Juliana R.</strong>
-                  <small>trocou o carro com a gente</small>
-                </div>
+                <div><strong>Juliana R.</strong><small>trocou o carro com a gente</small></div>
               </footer>
-            </article>
-
-            <article class="testimonial">
+            </figure>
+            <figure class="testimonial">
               <div class="stars" aria-label="Avaliação 5 de 5">★★★★★</div>
               <blockquote>“Vendi minha corrente de ouro pela cotação do dia. Pesaram, conferiram a pureza e pagaram na hora.”</blockquote>
               <footer>
                 <span class="avatar" aria-hidden="true">AS</span>
-                <div>
-                  <strong>Antônio S.</strong>
-                  <small>vendeu ouro para a loja</small>
-                </div>
+                <div><strong>Antônio S.</strong><small>vendeu ouro para a loja</small></div>
               </footer>
-            </article>
-
-            <article class="testimonial">
+            </figure>
+            <figure class="testimonial">
               <div class="stars" aria-label="Avaliação 5 de 5">★★★★★</div>
               <blockquote>“Jogo de rodas aro 20 impecável, instalado no mesmo dia. Ainda aceitou as minhas antigas como parte do pagamento.”</blockquote>
               <footer>
                 <span class="avatar" aria-hidden="true">DP</span>
-                <div>
-                  <strong>Diego P.</strong>
-                  <small>comprou rodas aro 20</small>
-                </div>
+                <div><strong>Diego P.</strong><small>comprou rodas aro 20</small></div>
               </footer>
-            </article>
+            </figure>
           </div>
         </div>
       </section>
 
       <!-- FAQ -->
-      <section class="section section--tight" id="faq">
-        <div class="container">
+      <section class="section" id="faq">
+        <div class="container faq-layout">
           <div class="section-head">
             <div>
               <span class="eyebrow">Dúvidas frequentes</span>
-              <h2>Antes de fechar, <span class="gold">tira a dúvida</span></h2>
+              <h2>Antes de fechar, <span class="gold">tire a dúvida</span></h2>
+              <p>As perguntas que mais recebemos no WhatsApp.</p>
+            </div>
+            <div class="faq-help">
+              <strong>Ainda com dúvida?</strong>
+              <p>Fale direto com o Rubinho. Respondemos no mesmo dia, em horário comercial.</p>
+              <a class="btn btn--outline-gold btn--sm" data-whatsapp-link href="#" target="_blank" rel="noopener">Perguntar no WhatsApp</a>
             </div>
           </div>
 
@@ -419,50 +390,37 @@
       </section>
 
       <!-- Contato -->
-      <section class="section" id="contato">
+      <section class="section section--tight" id="contato">
         <div class="container">
-          <div class="section-head">
+          <div class="cta-panel">
             <div>
               <span class="eyebrow">Fale com a gente</span>
-              <h2>Atendimento direto, <span class="gold">sem intermediário</span></h2>
-              <p>O jeito mais rápido é o WhatsApp. Também respondemos no Instagram.</p>
+              <h2>Atendimento direto, <span class="gold">sem intermediário.</span></h2>
+              <p>O jeito mais rápido de comprar, vender ou trocar é pelo WhatsApp. Mande o que procura e receba as opções do dia.</p>
+              <div class="hero-actions">
+                <a class="btn btn--gold" data-whatsapp-link href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+                <a class="btn btn--ghost" href="/catalogo">Ver catálogo</a>
+              </div>
             </div>
-          </div>
 
-          <div class="contact-grid">
-            <article class="contact-card">
-              <span class="icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Z"/></svg>
-              </span>
-              <strong>WhatsApp</strong>
-              <a data-whatsapp-link href="#" target="_blank" rel="noopener">(83) 98661-6556</a>
-              <p>Resposta rápida em horário comercial.</p>
-            </article>
-
-            <article class="contact-card">
-              <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
-                  <circle cx="12" cy="12" r="4"/>
-                  <circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/>
-                </svg>
-              </span>
-              <strong>Instagram</strong>
-              <a href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">@rubinhocomercios</a>
-              <p>Novidades, chegadas e negócios fechados.</p>
-            </article>
-
-            <article class="contact-card">
-              <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" stroke-linejoin="round"/>
-                  <circle cx="12" cy="10" r="2.6"/>
-                </svg>
-              </span>
-              <strong>Atendimento</strong>
-              <p>Entrega na região e envio para todo o Brasil.</p>
-              <p>Segunda a sábado, 8h às 19h.</p>
-            </article>
+            <div class="contact-list">
+              <a class="contact-row" data-whatsapp-link href="#" target="_blank" rel="noopener">
+                <span class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Z"/></svg></span>
+                <span><small>WhatsApp</small><strong>(83) 98661-6556</strong></span>
+              </a>
+              <a class="contact-row" href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">
+                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+                <span><small>Instagram</small><strong>@rubinhocomercios</strong></span>
+              </a>
+              <div class="contact-row">
+                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></span>
+                <span><small>Horário</small><strong>Segunda a sábado, 8h às 19h</strong></span>
+              </div>
+              <div class="contact-row">
+                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+                <span><small>Entrega</small><strong>Na região e envio para todo o Brasil</strong></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -487,10 +445,18 @@
           </div>
 
           <div class="footer-col">
-            <h3>Contato</h3>
-            <a data-whatsapp-link href="#" target="_blank" rel="noopener">WhatsApp (83) 98661-6556</a>
-            <a href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">Instagram</a>
+            <h3>Loja</h3>
+            <a href="/#como-funciona">Vender ou trocar</a>
+            <a href="/#depoimentos">Depoimentos</a>
+            <a href="/#faq">Dúvidas frequentes</a>
             <a href="/admin">Painel do lojista</a>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contato</h3>
+            <a data-whatsapp-link href="#" target="_blank" rel="noopener">(83) 98661-6556</a>
+            <a href="https://www.instagram.com/rubinhocomercios/" target="_blank" rel="noopener">@rubinhocomercios</a>
+            <span>Seg. a sáb., 8h às 19h</span>
           </div>
         </div>
 
@@ -500,5 +466,9 @@
         </div>
       </div>
     </footer>
+
+    <a class="wa-float" data-whatsapp-link href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm5.72 13.9c-.24.68-1.4 1.3-1.94 1.36-.54.06-1.04.24-3.5-.72-2.96-1.16-4.82-4.2-4.96-4.4-.14-.2-1.16-1.56-1.16-2.98 0-1.42.74-2.12 1-2.42.26-.3.56-.38.74-.38h.54c.18 0 .42-.06.66.5.24.58.82 2 .9 2.14.08.14.12.3.02.5-.1.2-.16.32-.32.5-.16.18-.34.4-.48.54-.16.16-.32.34-.14.66.18.32.8 1.32 1.72 2.14 1.18 1.04 2.16 1.38 2.46 1.54.3.16.48.14.66-.06.18-.2.76-.88.96-1.18.2-.3.4-.24.68-.14.28.1 1.74.82 2.04.96.3.14.5.22.58.34.08.12.08.7-.16 1.38Z"/></svg>
+    </a>
   </body>
 </html>

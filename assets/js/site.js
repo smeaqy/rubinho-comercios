@@ -137,6 +137,9 @@ function initHeader() {
 
 /* ------------------------------ Product card ------------------------------ */
 
+const WA_ICON =
+  '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.54 3.75 1.48 5.3L2 22l4.98-1.62a9.8 9.8 0 0 0 5.06 1.4c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm5.72 13.9c-.24.68-1.4 1.3-1.94 1.36-.54.06-1.04.24-3.5-.72-2.96-1.16-4.82-4.2-4.96-4.4-.14-.2-1.16-1.56-1.16-2.98 0-1.42.74-2.12 1-2.42.26-.3.56-.38.74-.38h.54c.18 0 .42-.06.66.5.24.58.82 2 .9 2.14.08.14.12.3.02.5-.1.2-.16.32-.32.5-.16.18-.34.4-.48.54-.16.16-.32.34-.14.66.18.32.8 1.32 1.72 2.14 1.18 1.04 2.16 1.38 2.46 1.54.3.16.48.14.66-.06.18-.2.76-.88.96-1.18.2-.3.4-.24.68-.14.28.1 1.74.82 2.04.96.3.14.5.22.58.34.08.12.08.7-.16 1.38Z"/></svg>';
+
 export function productCard(product) {
   const category = CATEGORIES[product.category]?.label || 'Produto';
   const condition = CONDITION_LABELS[product.condition] || '';
@@ -146,8 +149,10 @@ export function productCard(product) {
     <article class="product-card">
       <a class="product-media" href="#" data-open-product="${escapeHtml(product.id)}" aria-label="Ver detalhes de ${escapeHtml(product.title)}">
         <img src="${escapeHtml(productImage(product))}" alt="${escapeHtml(product.title)}" loading="lazy" width="800" height="600">
-        ${product.featured ? '<span class="product-badge">Destaque</span>' : ''}
-        ${condition ? `<span class="product-badge product-badge--muted">${escapeHtml(condition)}</span>` : ''}
+        <span class="product-badges">
+          ${product.featured ? '<span class="product-badge">Destaque</span>' : ''}
+          ${condition ? `<span class="product-badge product-badge--muted">${escapeHtml(condition)}</span>` : ''}
+        </span>
       </a>
       <div class="product-body">
         <span class="product-cat">${escapeHtml(meta)}</span>
@@ -157,8 +162,8 @@ export function productCard(product) {
           ${installmentLabel(product) ? `<small class="product-installment">ou ${escapeHtml(installmentLabel(product))}</small>` : ''}
         </div>
         <div class="product-actions">
-          <button class="btn btn--ghost btn--sm" type="button" data-open-product="${escapeHtml(product.id)}">Detalhes</button>
-          <a class="btn btn--wa btn--sm" href="${whatsappLink(product)}" target="_blank" rel="noopener">WhatsApp</a>
+          <button class="btn btn--ghost btn--sm" type="button" data-open-product="${escapeHtml(product.id)}">Ver detalhes</button>
+          <a class="btn btn--wa btn--sm btn-icon-wa" href="${whatsappLink(product)}" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp sobre ${escapeHtml(product.title)}">${WA_ICON}</a>
         </div>
       </div>
     </article>
@@ -270,6 +275,7 @@ async function initHome() {
   const totalNode = document.querySelector('[data-total-count]');
 
   grid.innerHTML = Array.from({ length: 4 }, () => '<div class="skeleton-card"></div>').join('');
+  if (totalNode) totalNode.textContent = '…';
 
   let products = [];
   try {
@@ -296,7 +302,7 @@ async function initHome() {
     node.textContent = count === 1 ? '1 item disponível' : `${count} itens disponíveis`;
   });
 
-  if (totalNode) totalNode.textContent = String(products.length).padStart(2, '0');
+  if (totalNode) totalNode.textContent = String(products.length);
 
   initModal(products);
 }
