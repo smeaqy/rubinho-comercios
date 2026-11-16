@@ -59,7 +59,7 @@ Abra `http://localhost:3000` (o Blob remoto é usado também em desenvolvimento)
 npx vercel --prod
 ```
 
-O projeto já está publicado em `https://rubinho-comercios.vercel.app`.
+O projeto já está publicado em `https://rubinho-comercios-gamma.vercel.app`.
 
 ## Uso do painel
 
